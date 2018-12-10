@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //后台登录页面
-Route::resource('/admin/login','Admin\LoginController');
+Route::resource('/adminlogin','Admin\LoginController');
 //后台路由
 Route::group(['middleware'=>'login'],function(){
 	Route::get('/admin',function(){

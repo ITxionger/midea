@@ -41,7 +41,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="/homeuser/{{$value->id}}" class="btn btn-info">查看用户详情</a>
+                        <a href="/homeuser/{{$value->id}}" class="btn btn-info">查看详情</a>
                         &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
                         <a href="#" class="btn btn-success">修改</a>
                         &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp

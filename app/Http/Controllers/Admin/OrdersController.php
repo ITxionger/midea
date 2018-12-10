@@ -15,9 +15,9 @@ class OrdersController extends Controller
     public function index()
     {
         // 加载订单列表
-         $orders = DB::table('orders')->get();
+        $orders = DB::table('orders')->get();
         return view('Admin.orders_list',['orders'=>$orders]);
-        
+
     }
 
     /**
