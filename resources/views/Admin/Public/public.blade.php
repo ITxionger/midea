@@ -154,6 +154,7 @@
         <li><a href="">分类添加</a></li> 
         <li><a href="">分类列表</a></li> 
        </ul> </li> 
+      <li> <a href="/admin/orders"><i class="icon-user"></i> 订单管理</a></li> 
       <li> <a href="#"><i class="icon-file"></i> 文章管理</a> 
        <ul class="closed"> 
         <li><a href="">文章添加</a></li> 

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //后台登录页面
-Route::resource('/adminlogin','Admin\LoginController');
+Route::resource('/admin/login','Admin\LoginController');
 //后台路由
 Route::group(['middleware'=>'login'],function(){
 	Route::get('/admin',function(){
@@ -23,4 +23,5 @@ Route::group(['middleware'=>'login'],function(){
 	});//后台首页
 	Route::resource('/adminuser','Admin\AdminuserController');	//后台管理员模板管理
 	Route::resource('/homeuser','Admin\UserController');		//前台用户管理
+	Route::resource('/admin/orders','Admin\OrdersController'); //后台订单模块
 });
