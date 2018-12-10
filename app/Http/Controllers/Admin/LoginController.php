@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
 class LoginController extends Controller
 {
     /**
@@ -24,7 +24,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +35,19 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        $user = DB::table('admin_users')->where('name','=',$data['name'])->first();
+        if ($user) {
+            if ($data['password']==$user->password) {
+                session(['name'=>$user->name]);
+                session(['id'=>$user->id]);
+                return redirect('/admin');
+            }else{
+                return back()->with('error','密码错误');
+            }
+        }else{
+            return back()->with('error','用户名有误');
+        }
     }
 
     /**
@@ -78,8 +90,12 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        //删除session
+        $request->session()->pull('name');
+        $request->session()->pull('id');
+        //返回页面
+        return redirect('/adminlogin');
     }
 }

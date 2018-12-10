@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
 class UserController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view("Admin.user_list");
+        $data = DB::table('user')->get();
+        return view("Admin.homeuser_list",['data'=>$data]);
     }
 
     /**
@@ -24,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.homeuser_add');
     }
 
     /**
@@ -46,7 +47,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table("user")->where('id','=',$id)->first();
+        return view('Admin.homeuser_info',['data'=>$data]);
     }
 
     /**

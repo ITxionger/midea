@@ -17,8 +17,8 @@ Route::get('/', function () {
 //后台登录页面
 Route::resource('/adminlogin','Admin\LoginController');
 //后台路由
-Route::group([],function(){
-	Route::get('admin',function(){
+Route::group(['middleware'=>'login'],function(){
+	Route::get('/admin',function(){
 		return view('Admin.index');
 	});//后台首页
 	Route::resource('/adminuser','Admin\AdminuserController');	//后台管理员模板管理
