@@ -28,7 +28,11 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        //
+        // 加载订单详情
+        $orders = DB::table('orders')->where('id','=',$id)->first();
+        $order_info = DB::table('order_detail')->where('order_id','=',$orders->order_id)->get();
+        $i = 0;
+        return view('Admin.order_info',['orders'=>$orders,'order_info'=>$order_info,'i'=>$i]);
     }
 
     /**

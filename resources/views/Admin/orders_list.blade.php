@@ -1,9 +1,9 @@
 @extends('Admin.Public.public')
-@section('title','用户列表')
+@section('title','订单列表')
 @section('admin')
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
-         <span><i class="icon-table"></i> Simple Table</span>
+         <span><i class="icon-table"></i>订单列表</span>
     </div>
     <div class="mws-panel-body no-padding">
         <table class="mws-table">
@@ -41,7 +41,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="/homeuser/{{$value->id}}" class="btn btn-info">查看详情</a>
+                        <a href="/admin/orders/{{$value->id}}" class="btn btn-info">详情</a>
                         &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
                         <a href="#" class="btn btn-success">修改</a>
                         &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
