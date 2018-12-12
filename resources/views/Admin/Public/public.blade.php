@@ -28,7 +28,8 @@
   <link rel="stylesheet" type="text/css" href="/static/Admin/css/mws-theme.css" media="screen" /> 
   <link rel="stylesheet" type="text/css" href="/static/Admin/css/themer.css" media="screen" /> 
   <link rel="stylesheet" type="text/css" href="/static/Admin/css/my.css" media="screen" /> 
-  <script src="/static/Admin/bootstrap/css/bootstrap.min.css"></script>
+  <link rel="stylesheet" type="text/css" href="/static/Admin/bootstrap/css/bootstrap.min.css" media="screen" />
+  <script src="/static/Admin/js/libs/jquery-1.8.3.min.js"></script>
   <title>@yield('title')</title> 
  </head> 
  <body> 
@@ -154,7 +155,13 @@
         <li><a href="">分类添加</a></li> 
         <li><a href="">分类列表</a></li> 
        </ul> </li> 
-      <li> <a href="/admin/orders"><i class="icon-user"></i> 订单管理</a></li> 
+       <li> <a href="#"><i class="icon-th-list"></i> 订单管理</a> 
+       <ul class="closed"> 
+        <li><a href="/admin/orders">所有订单</a></li> 
+        <li><a href="/admin/orders">进行中</a></li> 
+        <li><a href="/admin/orders?status='status','=','4'">已成交</a></li> 
+        <li><a href="/admin/orders">退货退款</a></li> 
+       </ul> </li> 
       <li> <a href="#"><i class="icon-file"></i> 文章管理</a> 
        <ul class="closed"> 
         <li><a href="">文章添加</a></li> 

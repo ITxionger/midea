@@ -6,7 +6,7 @@
          <span><i class="icon-table"></i>订单列表</span>
     </div>
     <div class="mws-panel-body no-padding">
-        <table class="mws-table">
+        <table class="mws-table" style="text-align: center;">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -18,7 +18,6 @@
             </thead>
             <tbody>
             @foreach($orders as $key=>$value)
-                
                 <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->order_id}}</td>
@@ -40,13 +39,8 @@
                             已关闭
                         @endif
                     </td>
-                    <td>
+                    <td width="100">
                         <a href="/admin/orders/{{$value->id}}" class="btn btn-info">详情</a>
-                        &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
-                        <a href="#" class="btn btn-success">修改</a>
-                        &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp
-                        <a href="#" class="btn btn-danger">删除</a>
-
                     </td>
                 </tr>
             @endforeach
